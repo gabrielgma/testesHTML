@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#140091" />
+        <title>Bolao Brazucas</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-78560302-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,900' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+
+    <body>
+		<div class="menu_list" id="menu_list">
+		  <div style="height: 5%;padding-top: 10px;padding-bottom: 10px;margin-bottom: 5px;">
+			<button class="cross" onclick="closeNav()">&#735;</button>
+			<button class="crossMob" onclick="closeMob()">&#735;</button>
+		  </div>
+		  <ul>
+			
+				<a href="../../logged/"><li>HOME</li></a>
+				<a href="../../logged/standings"><li>CLASSIFICAÇÃO</li></a>
+				<a href="../../logged/bets"><li>PALPITES</li></a>
+				<a href="../../logged/profile"><li>PERFIL</li></a>
+				<a href="../../logged/signout"><li>LOGOUT</li></a>
+				
+					<a href="../../logged/admin"><li>ADMIN</li></a>
+				
+			
+		  </ul>
+		</div> 
+		<div class="screen" id="screen"></div>
+		<div class="main" id="main">
+		<div class="header"><button class="menu" onclick="openNav()">Menu</button><button class="mobile" onclick="openMob()">Menu</button>Bolão Brazucas</div>
+		
+		<!--<div class="loader">Loading...</div>-->
+		<script>
+		function openNav() {
+			document.getElementById("menu_list").style.width = "250px";
+			document.getElementById("main").style.marginLeft = "250px";
+			document.getElementById("screen").style.height = "100%";
+			document.getElementById("screen").style.width = "100%";
+			$( ".menu" ).hide();
+		}
+		
+		function openMob() {
+			$( ".mobile" ).hide();
+			document.getElementById("menu_list").style.width = "100%";
+			
+		}
+
+			/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+		function closeNav() {
+			document.getElementById("menu_list").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+			document.getElementById("screen").style.height = "0%";
+			document.getElementById("screen").style.width = "0%";
+			$( ".menu" ).show();
+		}
+		
+		function closeMob() {
+			document.getElementById("menu_list").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+			document.getElementById("screen").style.height = "0%";
+			document.getElementById("screen").style.width = "0%";
+			$( ".mobile" ).show();
+		}
+		</script>
+		<div class="content">
+		<p>Bem vindo, gabriel.munizb@gmail.com <a href='signout'>Logout</a></p>
+		
+		<p><b>Envio de Palpites - Rodada 1</b></p>
+		<div class="formulario">
+		<form action="bets" method="post">
+		<ul>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Sábado<br>13/05-16h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>FLA</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/FLA.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="FLA" id="FLA"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="CAM" id="CAM"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/CAM.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>CAM</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Sábado<br>13/05-19h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>COR</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/COR.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="COR" id="COR"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="CHA" id="CHA"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/CHA.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>CHA</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Domingo<br>14/05-11h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>FLU</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/FLU.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="FLU" id="FLU"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="SAN" id="SAN"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/SAN.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>SAN</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Domingo<br>14/05-16h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>PAL</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/PAL.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="PAL" id="PAL"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="VAS" id="VAS"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/VAS.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>VAS</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Domingo<br>14/05-16h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>CRU</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/CRU.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="CRU" id="CRU"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="SPA" id="SPA"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/SPA.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>SPA</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Domingo<br>14/05-16h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>BAH</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/BAH.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="BAH" id="BAH"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="CAP" id="CAP"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/CAP.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>CAP</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Domingo<br>14/05-16h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>PON</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/PON.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="PON" id="PON"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="SPT" id="SPT"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/SPT.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>SPT</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Domingo<br>14/05-16h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>AVA</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/AVA.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="AVA" id="AVA"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="VIT" id="VIT"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/VIT.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>VIT</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Domingo<br>14/05-19h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>GRE</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/GRE.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="GRE" id="GRE"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="BOT" id="BOT"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/BOT.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>BOT</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class='jogo'>
+					<div class='confronto'>
+						<span class='horario'>
+						
+						Segunda<br>15/05-20h00
+						</span>
+						<span class='mandante_conf'>
+							<span class='mandante-nome'>CTB</span>
+							<img class='escudo-mandante' itemprop='image' src='/escudos/CTB.png' width='20' height='20' title=''>
+						</span>
+						<span class='placar'>
+							<span class='gols-mandante'> <input type="tel" class="input-mandante" name="CTB" id="CTB"> </span>
+							<span class='versus_placar'>x</span>
+							<span class='gols-visitante'> <input type="tel" class="input-visitante" name="ACG" id="ACG"> </span>
+						</span>
+						<span class='visitante_conf'>
+							<img class='escudo-visitante' itemprop='image' src='/escudos/ACG.png' width='20' height='20' title=''>
+							<span class='visitante-nome'>ACG</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		
+		</ul>
+		<!--copa-->
+		
+		
+		<input type="hidden" class="form-control" name="repeat" id="repeat" value="1">
+		<input type="hidden" class="form-control" name="bets" value="1">
+		<input type="hidden" class="form-control" name="partic" value="{&#34;__v&#34;:0,&#34;_id&#34;:&#34;58f6492faf80c7aaf3ec1077&#34;,&#34;active&#34;:true,&#34;club&#34;:&#34;BAH&#34;,&#34;division&#34;:&#34;58f6492caf80c7aaf3ec1063&#34;,&#34;email&#34;:&#34;gabriel.munizb@gmail.com&#34;,&#34;lastlog&#34;:&#34;Mon May 08 2017 18:56:55 GMT-0400 (EDT)&#34;,&#34;name&#34;:&#34;Gabriel&#34;,&#34;password&#34;:&#34;$2a$10$KmD9VMLi9WAHErOT2t66/O4adI8Quk0ougvpLbAp9YTkX2MfGx9Sa&#34;,&#34;profile&#34;:&#34;admin&#34;}">
+		
+		<input type="hidden" class="form-control" name="s_league" id="s_league" value="">
+		<input type="hidden" class="form-control" name="s_cup" id="s_cup" value="">
+		<button type="submit" class="btn">Enviar palpites</button>
+    </form>
+	
+	</div>
+		</div>
+		</div>
+		<script>
+		$('#copa').hide();
+			function select_cup(elem){
+			  if(elem.checked) {
+				 document.getElementById("repeat").value = "1";
+				 $("#copa").hide();
+			  }else{
+				 document.getElementById("repeat").value = "0";
+				 $("#copa").fadeIn(500);
+			  }
+			}
+			
+			
+				document.getElementById("s_league").value = "5910f55ebf804561160dd977";
+				
+					document.getElementById("FLA").value = 0;
+					document.getElementById("CAM").value = 0;
+				
+					document.getElementById("COR").value = 0;
+					document.getElementById("CHA").value = 0;
+				
+					document.getElementById("FLU").value = 0;
+					document.getElementById("SAN").value = 0;
+				
+					document.getElementById("PAL").value = 0;
+					document.getElementById("VAS").value = 0;
+				
+					document.getElementById("CRU").value = 0;
+					document.getElementById("SPA").value = 0;
+				
+					document.getElementById("BAH").value = 0;
+					document.getElementById("CAP").value = 0;
+				
+					document.getElementById("PON").value = 0;
+					document.getElementById("SPT").value = 0;
+				
+					document.getElementById("AVA").value = 0;
+					document.getElementById("VIT").value = 0;
+				
+					document.getElementById("GRE").value = 0;
+					document.getElementById("BOT").value = 0;
+				
+					document.getElementById("CTB").value = 0;
+					document.getElementById("ACG").value = 0;
+				
+			
+		</script>
+		
+    </body>
+</html>
